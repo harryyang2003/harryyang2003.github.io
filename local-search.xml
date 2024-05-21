@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>操作系统的特征发展,中断</title>
+    <link href="/2024/05/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81%E5%8F%91%E5%B1%95-%E4%B8%AD%E6%96%AD/"/>
+    <url>/2024/05/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81%E5%8F%91%E5%B1%95-%E4%B8%AD%E6%96%AD/</url>
+    
+    <content type="html"><![CDATA[<h4 id="操作系统特征-四大特征"><a href="#操作系统特征-四大特征" class="headerlink" title="操作系统特征 - 四大特征"></a>操作系统特征 - 四大特征</h4><p>并发,共享,虚拟,异步</p><p><strong>并发</strong>:多个事务在一个时间段内,宏观上同时运行,微观上交替运行</p><p><strong>共享</strong>:系统中的资源可供内存多个并发执行的进程共同使用</p><p>分为:互斥共享(一个进程霸占使用)&#x2F;同时共享(多个进程交替使用)</p><p><strong>虚拟</strong>:把物理上的实体变为逻辑上的对应物</p><p>虚拟技术:空分复用技术(虚拟存储技术),时分复用技术(虚拟处理器)等</p><p><strong>异步</strong>:多道程序环境,由于资源有限,某个进程可能会等待资源释放再运行,称为异步</p><h4 id="操作系统的发展"><a href="#操作系统的发展" class="headerlink" title="操作系统的发展"></a>操作系统的发展</h4><h5 id="1-手工操作阶段"><a href="#1-手工操作阶段" class="headerlink" title="1.手工操作阶段"></a>1.手工操作阶段</h5><p><img src="C:\Users\ywh\AppData\Roaming\Typora\typora-user-images\image-20240521175008727.png" alt="image-20240521175008727"></p><h5 id="2-单道批处理"><a href="#2-单道批处理" class="headerlink" title="2.单道批处理"></a>2.单道批处理</h5><p><img src="C:\Users\ywh\AppData\Roaming\Typora\typora-user-images\image-20240521175403207.png" alt="image-20240521175403207"></p><p>将多个作业写入磁带,脱机输入</p><p><img src="C:\Users\ywh\AppData\Roaming\Typora\typora-user-images\image-20240521175418817.png" alt="image-20240521175418817"></p><p>单个作业仍然独占计算机</p><h5 id="3-多道批处理"><a href="#3-多道批处理" class="headerlink" title="3.多道批处理"></a>3.多道批处理</h5><p><img src="C:\Users\ywh\AppData\Roaming\Typora\typora-user-images\image-20240521175607890.png" alt="image-20240521175607890"></p><p>优点:多道程序并发执行,资源利用率大幅提升,如:在cpu计算时,可以同时进行读写操作</p><p>缺点:用户提交作业,用户就无法操作作业,只能等待计算机运行结束</p><h5 id="4-分时操作系统"><a href="#4-分时操作系统" class="headerlink" title="4.分时操作系统"></a>4.分时操作系统</h5><p><img src="C:\Users\ywh\AppData\Roaming\Typora\typora-user-images\image-20240521175902023.png" alt="image-20240521175902023"></p><p>优点:多个用户轮流使用计算机资源,用户请求可以立即被响应,解决了人机交互问题</p><p>缺点:不能优先处理紧急作业,只能按时间轮询</p><h5 id="5-实时操作系统"><a href="#5-实时操作系统" class="headerlink" title="5.实时操作系统"></a>5.实时操作系统</h5><p>优点:能够响应一些紧急任务,可以有严格的时间限制</p><h5 id="6-网络操作系统-分布式操作系统-个人计算机操作系统…"><a href="#6-网络操作系统-分布式操作系统-个人计算机操作系统…" class="headerlink" title="6.网络操作系统,分布式操作系统,个人计算机操作系统…"></a>6.网络操作系统,分布式操作系统,个人计算机操作系统…</h5><h4 id="操作系统运行机制"><a href="#操作系统运行机制" class="headerlink" title="操作系统运行机制"></a>操作系统运行机制</h4><p><strong>内核态</strong>,内核程序:kernel,可以执行特权指令,接近硬件</p><p><strong>用户态</strong>,应用程序:只能使用非特权指令,接近用户</p><p>cpu有一个寄存器 <strong>程序状态寄存器</strong>(psw) ,标志cpu处于哪种状态</p><p><strong>运行流程</strong>:</p><p>1.刚开机处于 内核态 ,操作系统运行<strong>内核</strong>程序</p><p>2.当用户启动一个应用程序,内核程序让出cpu,psw切换为用户态</p><p>如果在<strong>用户态运行特权指令</strong></p><p>3.发生 <strong>中断信号</strong>,cpu直接转为内核态</p><p>4.处理中断,再分配cpu</p><h4 id="中断-异常"><a href="#中断-异常" class="headerlink" title="中断&amp;异常"></a>中断&amp;异常</h4><p><strong>中断向量表</strong>,找到相应类型的中断处理程序</p><h5 id="中断"><a href="#中断" class="headerlink" title="中断:"></a><strong>中断</strong>:</h5><p>中断是让 操作系统 内核重新夺回cpu运行权的<strong>唯一途径</strong></p><p>1.<strong>内中断</strong>:中断信号来源于cpu内部</p><p>如:用户态执行特权处理,除数为0…<strong>非法指令</strong>,会直接产生内中断</p><p>如:应用程序<strong>主动请求</strong>(调用系统资源)操作系统<strong>内核服务</strong>(陷入指令),也会产生内中断</p><p>2.<strong>外中断</strong>:</p><p>如:时钟中断,时钟部件<strong>控制</strong>各个进程的<strong>运行时间</strong>,会按照固定时间发出中断信号</p><p>如:系统资源(打印机等),处理<strong>IO中断的内核程序</strong>,在输入输出任务完成时,向cpu发送中断信号</p><h5 id="异常-指内中断"><a href="#异常-指内中断" class="headerlink" title="异常:指内中断"></a>异常:指内中断</h5><p>陷入,故障,终止</p><p><strong>陷入</strong>:应用程序故意引发</p><p><strong>故障</strong>:可被内核程序修复,cpu修复后仍然会给应用程序使用权</p><p><strong>终止</strong>:致命错误,内核程序无法修复,不会再给使用权</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>操作系统</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>社区项目-day01</title>
     <link href="/2024/05/21/%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE-day01/"/>
     <url>/2024/05/21/%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE-day01/</url>
