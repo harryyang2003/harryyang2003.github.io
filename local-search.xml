@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>社区项目-day01</title>
+    <link href="/2024/05/21/%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE-day01/"/>
+    <url>/2024/05/21/%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE-day01/</url>
+    
+    <content type="html"><![CDATA[<h3 id="核心界面"><a href="#核心界面" class="headerlink" title="核心界面:"></a>核心界面:</h3><h5 id="1-前台文章展示-普通用户"><a href="#1-前台文章展示-普通用户" class="headerlink" title="1.前台文章展示 - 普通用户"></a>1.前台文章展示 - 普通用户</h5><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stata">基于安卓<span class="hljs-keyword">app</span> - 后改微信小程序<br></code></pre></td></tr></table></figure><h5 id="2-后台文章管理-自媒体博主"><a href="#2-后台文章管理-自媒体博主" class="headerlink" title="2.后台文章管理 - 自媒体博主"></a>2.后台文章管理 - 自媒体博主</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">基于vue网页<br></code></pre></td></tr></table></figure><h5 id="3-后台超级管理员-项目维护人员"><a href="#3-后台超级管理员-项目维护人员" class="headerlink" title="3.后台超级管理员 - 项目维护人员"></a>3.后台超级管理员 - 项目维护人员</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">基于vue网页<br></code></pre></td></tr></table></figure><h3 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构:"></a>微服务架构:</h3><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型:"></a>技术选型:</h3><h3 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计:"></a>数据库设计:</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>社区项目</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2024/05/21/hello-world/"/>
     <url>/2024/05/21/hello-world/</url>
