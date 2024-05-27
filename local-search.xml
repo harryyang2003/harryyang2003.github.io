@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>Hexo创建文章流程</title>
+    <link href="/2024/05/27/Hexo%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0%E6%B5%81%E7%A8%8B/"/>
+    <url>/2024/05/27/Hexo%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0%E6%B5%81%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<p>进入blog根目录,打开cmd</p><p>1.npx hexo new “文章标题”</p><p>2.hexo g &amp;&amp; hexo d</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JVM虚拟机-1-初始</title>
+    <link href="/2024/05/21/JVM%E8%99%9A%E6%8B%9F%E6%9C%BA-1-%E5%88%9D%E5%A7%8B/"/>
+    <url>/2024/05/21/JVM%E8%99%9A%E6%8B%9F%E6%9C%BA-1-%E5%88%9D%E5%A7%8B/</url>
+    
+    <content type="html"><![CDATA[<h4 id="JVM虚拟机"><a href="#JVM虚拟机" class="headerlink" title="JVM虚拟机"></a>JVM虚拟机</h4><p>java virtual machine</p><p><strong>构成</strong>:类加载器,运行时数据区,垃圾回收器…</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>JVM虚拟机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>操作系统的特征发展,中断</title>
     <link href="/2024/05/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81%E5%8F%91%E5%B1%95-%E4%B8%AD%E6%96%AD/"/>
     <url>/2024/05/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%B9%E5%BE%81%E5%8F%91%E5%B1%95-%E4%B8%AD%E6%96%AD/</url>
