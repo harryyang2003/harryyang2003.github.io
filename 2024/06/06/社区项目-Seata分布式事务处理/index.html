@@ -16,31 +16,27 @@
   <meta name="author" content="杨文昊">
   <meta name="keywords" content="">
   
-    <meta name="description" content="JVM垃圾回收详解java为了简化对象的释放,引入了自动的垃圾回收(GC)机制,主要负责堆上的垃圾回收,防止内存泄漏导致内存溢出 对于线程不共享的内存空间:随着线程消逝而释放,不需要垃圾回收 对于线程共享的内存空间:方法区,堆.是共享的,需要进行垃圾回收 1.方法区如何进行垃圾回收?类的生命周期的最后一项:卸载,方法区中能回收的就是不再使用的类 类可以被卸载需要满足三个条件: 1.此类所有实例对象">
+    <meta name="description" content="Consistency(一致性):用户访问分布式系统中的任意节点，得到的数据必须一致 Availability (可用性):用户访问集群中的任意健康节点，必须能得到响应，而不是超时或拒绝 Partition(分区):因为网络故障或其它原因导致分布式系统中的部分节点与其它节点失去连接，形成独立分区。Tolerance(容错):在集群出现分区时，整个系统也要持续对外提供服务   如何解决多个微服">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java虚拟机_垃圾回收">
-<meta property="og:url" content="http://example.com/2024/06/02/java%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/index.html">
+<meta property="og:title" content="社区项目-Seata分布式事务处理">
+<meta property="og:url" content="http://example.com/2024/06/06/%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE-Seata%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JVM垃圾回收详解java为了简化对象的释放,引入了自动的垃圾回收(GC)机制,主要负责堆上的垃圾回收,防止内存泄漏导致内存溢出 对于线程不共享的内存空间:随着线程消逝而释放,不需要垃圾回收 对于线程共享的内存空间:方法区,堆.是共享的,需要进行垃圾回收 1.方法区如何进行垃圾回收?类的生命周期的最后一项:卸载,方法区中能回收的就是不再使用的类 类可以被卸载需要满足三个条件: 1.此类所有实例对象">
+<meta property="og:description" content="Consistency(一致性):用户访问分布式系统中的任意节点，得到的数据必须一致 Availability (可用性):用户访问集群中的任意健康节点，必须能得到响应，而不是超时或拒绝 Partition(分区):因为网络故障或其它原因导致分布式系统中的部分节点与其它节点失去连接，形成独立分区。Tolerance(容错):在集群出现分区时，整个系统也要持续对外提供服务   如何解决多个微服">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/myimg/1717325826795.png">
-<meta property="og:image" content="http://example.com/myimg/1717385995871.png">
-<meta property="og:image" content="http://example.com/myimg/N2RHXNHJWDLA.png">
-<meta property="og:image" content="http://example.com/myimg/AMZMHU45M0SMBFW6P79A.png">
-<meta property="og:image" content="http://example.com/myimg/WDZFM5QNTSP99LGOY4.png">
-<meta property="og:image" content="http://example.com/myimg/QTBN8UAHQ3997B0.png">
-<meta property="og:image" content="http://example.com/myimg/U8Z4RHTF1AN0FKFTK.png">
-<meta property="og:image" content="http://example.com/myimg/SB947Z7OVPYXZ3F8XPX.png">
-<meta property="article:published_time" content="2024-06-02T09:57:14.000Z">
-<meta property="article:modified_time" content="2024-06-05T11:38:23.421Z">
+<meta property="og:image" content="http://example.com/myimg/1717659791510.png">
+<meta property="og:image" content="http://example.com/myimg/1717660280681.png">
+<meta property="og:image" content="http://example.com/myimg/1717660670953.jpg">
+<meta property="og:image" content="http://example.com/myimg/1717660997592.jpg">
+<meta property="article:published_time" content="2024-06-06T02:48:51.000Z">
+<meta property="article:modified_time" content="2024-06-06T08:09:04.487Z">
 <meta property="article:author" content="杨文昊">
-<meta property="article:tag" content="JVM java虚拟机">
+<meta property="article:tag" content="Seata 分布式事务处理 社区项目">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/myimg/1717325826795.png">
+<meta name="twitter:image" content="http://example.com/myimg/1717659791510.png">
   
   
   
-  <title>java虚拟机_垃圾回收 - Hexo</title>
+  <title>社区项目-Seata分布式事务处理 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="java虚拟机_垃圾回收"></span>
+            <span id="subtitle" data-typed-text="社区项目-Seata分布式事务处理"></span>
           
         </div>
 
@@ -217,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-02 17:57" pubdate>
-          2024年6月2日 下午
+        <time datetime="2024-06-06 10:48" pubdate>
+          2024年6月6日 上午
         </time>
       </span>
     
@@ -229,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          158 字
         
       </span>
     
@@ -240,7 +236,7 @@
         
         
         
-          13 分钟
+          2 分钟
         
       </span>
     
@@ -277,76 +273,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">java虚拟机_垃圾回收</h1>
+            <h1 id="seo-header">社区项目-Seata分布式事务处理</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="JVM垃圾回收详解"><a href="#JVM垃圾回收详解" class="headerlink" title="JVM垃圾回收详解"></a>JVM垃圾回收详解</h1><p>java为了简化对象的释放,引入了自动的<strong>垃圾回收(GC)<strong>机制,主要负责</strong>堆</strong>上的垃圾回收,防止内存泄漏导致<strong>内存溢出</strong></p>
-<p>对于线程不共享的内存空间:随着线程消逝而释放,不需要垃圾回收</p>
-<p>对于线程共享的内存空间:<strong>方法区,堆</strong>.是共享的,需要进行垃圾回收</p>
-<h1 id="1-方法区如何进行垃圾回收"><a href="#1-方法区如何进行垃圾回收" class="headerlink" title="1.方法区如何进行垃圾回收?"></a>1.方法区如何进行垃圾回收?</h1><p>类的生命周期的最后一项:卸载,方法区中能回收的就是不再使用的类</p>
-<p>类可以被卸载需要满足<strong>三个条件</strong>:</p>
-<p>1.此类所有实例对象都已经被回收,在堆中不存在任何该类的实例对象以及子类对象</p>
-<p>2.加载该类的类加载器已经被回收</p>
-<p>3.该类对应的java.lang.class对象没有在任何地方引用</p>
-<p>手动触发回收:</p>
-<p>System.gc(),不会立即回收垃圾,仅仅是向虚拟机发送一个请求,是否被回收,还需要虚拟机判断</p>
-<h1 id="2-堆回收"><a href="#2-堆回收" class="headerlink" title="2.堆回收?"></a>2.堆回收?</h1><p>判断对象是否可以被回收:根据对象是否被<strong>引用</strong>来决定,如果被引用,就不能被回收(<strong>不准确</strong>)</p>
-<p>如:A,B可以被回收</p>
-<p><img src="/myimg/1717325826795.png" srcset="/img/loading.gif" lazyload alt="1717325826795"></p>
-<h3 id="虚拟机如何判断"><a href="#虚拟机如何判断" class="headerlink" title="虚拟机如何判断?"></a>虚拟机如何判断?</h3><p>-引用计数法 可达性分析法</p>
-<h5 id="1-引用计数器"><a href="#1-引用计数器" class="headerlink" title="1.引用计数器"></a>1.引用计数器</h5><p>对象被引用时+1,取消引用时-1</p>
-<p>缺点:1.每次引用和取消引用,都需要维护计数器</p>
-<p>2.循环引用无法回收</p>
-<h5 id="2-可达性分析法"><a href="#2-可达性分析法" class="headerlink" title="2.可达性分析法"></a>2.可达性分析法</h5><p>java使用的是<strong>可达性分析法</strong>,可达性分析法将对象分为两类:垃圾回收的根对象,普通对象</p>
-<p>可以通过GC root引用的就不能被回收,GC root不能被回收</p>
-<p><img src="/myimg/1717385995871.png" srcset="/img/loading.gif" lazyload alt="1717385995871"></p>
-<h5 id="哪些对象被称之为GC-Root对象呢"><a href="#哪些对象被称之为GC-Root对象呢" class="headerlink" title="哪些对象被称之为GC Root对象呢?"></a>哪些对象被称之为GC Root对象呢?</h5><ul>
-<li>线程Thread对象,</li>
-<li>系统类加载器加载的java.lang.Class对象.</li>
-<li>监视器对象，用来保存同步锁synchronized关键字持有的对象，</li>
-<li>本地方法调用时使用的全局对象。</li>
+                <p><img src="/myimg/1717659791510.png" srcset="/img/loading.gif" lazyload alt="1717659791510"></p>
+<p><img src="/myimg/1717660280681.png" srcset="/img/loading.gif" lazyload alt="1717660280681"></p>
+<ul>
+<li><strong>Consistency</strong>(一致性):用户访问分布式系统中的任意节点，得到的数据必须一致</li>
+<li><strong>Availability</strong> (可用性):用户访问集群中的任意健康节点，必须能得到响应，而不是超时或拒绝</li>
+<li><strong>Partition</strong>(分区):因为网络故障或其它原因导致分布式系统中的部分节点与其它节点失去连接，形成独立分区。<strong>Tolerance</strong>(容错):在集群出现分区时，整个系统也要持续对外提供服务</li>
 </ul>
-<p><em>通过GC Root对普通对象的引用叫做*<em>强引用</em></em>,被强引用的对象都符合可达性分析法</p>
-<p>但是java总共有<strong>五种引用</strong>:</p>
-<p>强引用,软引用,弱引用,虚引用,终结器引用</p>
-<p>1.<strong>软引用</strong>,如果一个对象,只有软引用引用到他,当程序<strong>内存不足</strong>时,就会将<strong>软引用的数据</strong>进行<strong>回收</strong></p>
-<p>2.<strong>弱引用</strong>,弱引用的整体机制和软引用基本一致，区别在于弱引用包含的对象在垃圾回收时，不管<strong>内存够不够都会直接被回收</strong>。</p>
-<p>3.虚引用,终结器引用:开发中不会使用</p>
-<h1 id="3-垃圾回收算法"><a href="#3-垃圾回收算法" class="headerlink" title="3.垃圾回收算法"></a>3.垃圾回收算法</h1><p>垃圾回收要做两件事</p>
-<h5 id="1-找到存活和未存活对象"><a href="#1-找到存活和未存活对象" class="headerlink" title="1.找到存活和未存活对象"></a>1.找到存活和未存活对象</h5><h5 id="2-释放不再存活对象的内存"><a href="#2-释放不再存活对象的内存" class="headerlink" title="2.释放不再存活对象的内存"></a>2.释放不再存活对象的内存</h5><p>Java垃圾回收,会通过单独的GC线程完成,不管使用哪一种GC算法,都会有<strong>部分时间需要停止所有用户线程</strong>,这个过程被称为(Stop The World):<strong>STW</strong>,STW过长会影响用户使用</p>
-<p><strong>判断算法是否优秀</strong>:</p>
-<p>1.<strong>吞吐量</strong>:吞吐量指的是CPU 用于执行用户代码的时间与CPU总执行时间的比值<br>即吞吐量&#x3D;执行用户代码时间&#x2F;(执行用户代码时间＋GC时间)。<strong>吞吐量数值越高，垃圾回收的效率就越高</strong></p>
-<p>⒉.<strong>最大暂停时间</strong>:最大暂停时间指的是所有在垃圾回收过程中的<strong>STW时间最大值</strong></p>
-<p>3.<strong>堆使用效率</strong>:不同垃圾回收算法，对<strong>堆内存</strong>的<strong>使用方式</strong>是不同的。比如标记清除算法，可以使用完整的堆内存。而复制算法会将堆内存一分为二入每次只能使用一半内存。从堆使用效率上来说，标记清除算法要优于复制算法。</p>
-<p>*上述三种评价标准:堆使用效率、吞吐量，以及最大暂停时间<strong>不可兼得</strong>。<br>一般来说，堆内存越大，最大暂停时间就越长。想要减少最大暂停时间，就会降低吞吐量。<strong>不同的垃圾回收算法，适用于不同的场景</strong>。</p>
-<p><strong>算法分类</strong>:</p>
-<p>1.标记-清除算法-2.复制算法-3.标记-整理算法-4.分代GC</p>
-<p><strong>一.标记-清除算法</strong></p>
-<p>核心思想分为两个阶段:</p>
-<p>1.<strong>标记阶段</strong>:将所有<strong>存活的对象</strong>进行<strong>标记</strong>,(java使用可达性分析)</p>
-<p>2.<strong>清除阶段</strong>:从内存中<strong>删除没有被标记</strong>,也就是非存活对象</p>
-<p><strong>优缺点</strong>:</p>
-<p><strong>优点</strong>:<strong>实现简单</strong>，只需要在第一阶段给每个对象维护标志位，第二阶段删除对象即可。</p>
-<p><strong>缺点</strong>:1.<strong>碎片化问题</strong>:总共回收了9个字节，但是无法为5个字节的对象分配出合适的内存。</p>
-<p><img src="/myimg/N2RHXNHJWDLA.png" srcset="/img/loading.gif" lazyload alt="N2RHXNHJWDLA"></p>
-<p>2.<strong>分配速度慢</strong>:由于内存碎片的存在，需要维护一个空闲链表，极有可能发生每次需要遍历到链表的最后才能获得合适的内存空间。</p>
-<p><img src="/myimg/AMZMHU45M0SMBFW6P79A.png" srcset="/img/loading.gif" lazyload alt="AMZMHU45M0SMBFW6P79A"></p>
-<p><strong>二.复制算法</strong></p>
-<p>复制算法的核心思想是:将存活对象搬运到另一个空间,留下未存活对象,并互换名字,每次GC反复执行<br>1.准备<strong>两块空间</strong>From空间和To空间，每次在<strong>对象分配</strong>阶段，只能使用其中一块空间(From空间)。</p>
-<p>⒉.在垃圾回收GC阶段，将From中存活对象<strong>复制到To空间</strong>。</p>
-<p>3.将两块空间的From和To名字<strong>互换</strong>。</p>
-<p><img src="/myimg/WDZFM5QNTSP99LGOY4.png" srcset="/img/loading.gif" lazyload alt="WDZFM5QNTSP99LGOY4"></p>
-<p>4.将To空间数据全部清除即可</p>
-<p><strong>优缺点</strong></p>
-<p><img src="/myimg/QTBN8UAHQ3997B0.png" srcset="/img/loading.gif" lazyload alt="QTBN8UAHQ3997B0"></p>
-<p><strong>三.标记-整理算法</strong></p>
-<p>标记整理算法也叫标记压缩算法，是对<strong>标记清理算法</strong>中容易产生<strong>内存碎片问题的一种解决方案</strong>。</p>
-<p><img src="/myimg/U8Z4RHTF1AN0FKFTK.png" srcset="/img/loading.gif" lazyload alt="U8Z4RHTF1AN0FKFTK"></p>
-<p><img src="/myimg/SB947Z7OVPYXZ3F8XPX.png" srcset="/img/loading.gif" lazyload alt="SB947Z7OVPYXZ3F8XPX"></p>
-<p><strong>四.分代垃圾回收算法</strong></p>
-<p>现代优秀的垃圾回收算法，会将上述描述的垃圾回收算法组合进行使用，其中应用最广的就是分代垃圾回收算法(Generational GC)。</p>
+<p><img src="/myimg/1717660670953.jpg" srcset="/img/loading.gif" lazyload alt="1717660670953"></p>
+<p>如何解决多个微服务互相感知不到的问题? - 通过事务协调者</p>
+<p><img src="/myimg/1717660997592.jpg" srcset="/img/loading.gif" lazyload alt="1717660997592"></p>
+<p>选择seata框架</p>
 
                 
               </div>
@@ -359,7 +301,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/JVM-java%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="print-no-link">#JVM java虚拟机</a>
+        <a href="/tags/Seata-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86-%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE/" class="print-no-link">#Seata 分布式事务处理 社区项目</a>
       
     </div>
   
@@ -371,8 +313,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>java虚拟机_垃圾回收</div>
-      <div>http://example.com/2024/06/02/java虚拟机-垃圾回收/</div>
+      <div>社区项目-Seata分布式事务处理</div>
+      <div>http://example.com/2024/06/06/社区项目-Seata分布式事务处理/</div>
     </div>
     <div class="license-meta">
       
@@ -384,7 +326,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月2日</div>
+          <div>2024年6月6日</div>
         </div>
       
       
@@ -416,18 +358,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/03/%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE-%E6%96%87%E7%AB%A0%E5%AE%A1%E6%A0%B8/" title="社区项目-文章审核">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">社区项目-文章审核</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/30/java%E8%99%9A%E6%8B%9F%E6%9C%BA-%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD/" title="java虚拟机知识">
-                        <span class="hidden-mobile">java虚拟机知识</span>
+                      <a href="/2024/06/05/%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE-DFA%E7%AE%97%E6%B3%95-%E8%87%AA%E5%8A%A8%E6%9C%89%E7%A9%B7%E6%9C%BA/" title="社区项目-DFA算法,自动有穷机">
+                        <span class="hidden-mobile">社区项目-DFA算法,自动有穷机</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
